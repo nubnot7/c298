@@ -1,0 +1,101 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/road/protos/CurvedRoadSegment.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/road/protos/RoadLine.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/road/protos/StraightRoadSegment.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/bmw/BmwX5.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.14080149569203707 0.330990256566407 0.9330704093845166 0.8555331198799991
+  position -71.27926921341259 41.0596071710501 1.3509936635739976
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Solid {
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry DEF GROUND Plane {
+        size 2000 2000
+      }
+    }
+  ]
+  boundingObject USE GROUND
+  locked TRUE
+}
+CurvedRoadSegment {
+  translation -64.5 4.5 0.02
+  rotation 0 0 1 1.57
+  width 21.5
+  numberOfLanes 4
+  numberOfForwardLanes 2
+  lines [
+    RoadLine {
+    }
+    RoadLine {
+      color 0.85 1 0.3
+      type "double"
+    }
+  ]
+  rightBorder FALSE
+  leftBorder FALSE
+  rightBarrier TRUE
+  leftBarrier TRUE
+  curvatureRadius 40.5
+}
+StraightRoadSegment {
+  translation -105 4.5 0.02
+  rotation 0 0 1 -1.57
+  name "road_1"
+  width 21.5
+  numberOfLanes 4
+  numberOfForwardLanes 2
+  lines [
+    RoadLine {
+    }
+    RoadLine {
+      color 0.85 0.75 0.3
+      type "double"
+    }
+  ]
+  rightBorder FALSE
+  leftBorder FALSE
+  rightBarrier TRUE
+  leftBarrier TRUE
+  length 69
+}
+BmwX5 {
+  hidden position_0_0 0.0031711773031431537
+  hidden position2_0_0 3730.615177235797
+  hidden position_0_1 -7.042994371133244e-06
+  hidden position2_0_1 1.132789511053929
+  hidden position_0_2 5.465145129482604
+  hidden position_0_3 5.997983956128149
+  hidden linearVelocity_0 -0.004260700367425142 -0.003060592996406779 -1.80403083213605e-08
+  hidden angularVelocity_0 2.089577350527487e-07 1.2981956040877368e-07 2.1204656630570235e-05
+  hidden rotation_1 0.0015855860954152538 0.9999975498525531 -0.0015447348071966768 1.5968976781932303
+  hidden linearVelocity_1 -0.004234540828043757 -0.0030907746433576633 -8.74393219091001e-08
+  hidden angularVelocity_1 2.606030624794592 -9.636523409377807 0.07156632375620005
+  hidden rotation_2 -3.521497185505345e-06 0.9999999999784653 5.537869709576929e-06 1.13278951107343
+  hidden linearVelocity_2 -0.004267834583585803 -0.003099938267832416 2.5868529307141824e-07
+  hidden angularVelocity_2 0.0007614816011058925 -0.0027803979884838876 3.650745275584618e-05
+  hidden rotation_3 0 -1 0 5.465145129482604
+  hidden linearVelocity_3 -0.00425131989046469 -0.0030295175161726916 -2.681309900155123e-07
+  hidden angularVelocity_3 0.0034600022432182123 -0.012636368711277927 9.088250001535188e-05
+  hidden rotation_4 0 1 0 5.997983956128149
+  hidden linearVelocity_4 -0.004284617250169367 -0.0030386319286437873 7.364574997497212e-08
+  hidden angularVelocity_4 0.003484412851387014 -0.01272539294251307 9.137669930466146e-05
+  translation -66.9141587830834 44.33695861485905 -0.03657505385660746
+  rotation 0.012854787196713666 0.004537931052193088 0.9999070764965576 -2.8744433862482635
+  controller "car"
+}
